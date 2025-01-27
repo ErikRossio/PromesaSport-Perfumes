@@ -8,6 +8,16 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="tu-favicon.ico" type="image/x-icon">
+  <meta name="description" content="Promesa Sport - Ropa y perfumes árabes de calidad.">
+  <meta name="keywords" content="ropa, perfumes árabes, Promesa Sport, moda">
+  <meta name="author" content="Promesa Sport">
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Promesa Sport">
+  <meta property="og:description" content="Promesa Sport - Ropa y perfumes árabes de calidad.">
+  <meta property="og:image" content="https://tudominio.com/imagen-compartir.jpg">
+  <meta property="og:url" content="https://tudominio.com">
+
   <style>
     :root {
       /* Colores principales */
@@ -16,6 +26,18 @@
       --secondary-dark: #2c2c2c; /* Gris oscuro */
       --text-dark: #f0f0f0; /* Texto claro en fondo oscuro */
       --accent-dark: #8a2be2; /* Violeta brillante */
+      --bg-light: #f9f9f9; 
+      --text-light: #1f1f1f; 
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    body.light {
+      background-color: var(--bg-light);
+      color: var(--text-light);
     }
 
     body {
@@ -92,18 +114,19 @@
     }
 
     .carousel-images img {
-  display: none;
-  opacity: 0;
-  width: 300px; /* Cambia este valor según el tamaño deseado */
-  height: auto; /* Mantén la proporción de la imagen */
-  margin: 0 auto; /* Centrar la imagen dentro del contenedor */
-  transition: opacity 0.3s ease-in-out;
-}
-.carousel-images img.active {
-  display: block;
-  opacity: 1;
-}
+      display: none;
+      opacity: 0;
+      width: 100%; /* Ajuste para móviles */
+      max-width: 300px; /* Tamaño máximo para escritorio */
+      height: auto; /* Mantén la proporción de la imagen */
+      margin: 0 auto; /* Centrar la imagen dentro del contenedor */
+      transition: opacity 0.3s ease-in-out;
+    }
 
+    .carousel-images img.active {
+      display: block;
+      opacity: 1;
+    }
 
     .carousel-button {
       position: absolute;
@@ -111,9 +134,11 @@
       transform: translateY(-50%);
       background-color: rgba(0, 0, 0, 0.5);
       color: white;
-      font-size: 2rem;
-      padding: 10px;
+      font-size: 1.5rem; /* Tamaño más pequeño para móviles */
+      padding: 8px;
       cursor: pointer;
+      border: none;
+      outline: none;
     }
 
     .carousel-button-prev {
@@ -123,9 +148,28 @@
     .carousel-button-next {
       right: 0;
     }
+
+    @media (max-width: 768px) {
+      .carousel-images img {
+        max-width: 200px; /* Tamaño más pequeño para móviles */
+      }
+
+      .carousel-button {
+        font-size: 1.2rem; /* Botones más pequeños en móviles */
+        padding: 6px;
+      }
+
+      h2 {
+        font-size: 2rem; /* Tamaño de fuente más pequeño para móviles */
+      }
+
+      p {
+        font-size: 1rem; /* Tamaño de fuente más pequeño para móviles */
+      }
+    }
   </style>
 </head>
-<body>
+<body class="dark">
   <!-- Progreso de scroll -->
   <div class="scroll-progress"></div>
 
@@ -143,23 +187,21 @@
   </header>
 
   <!-- Hero Section -->
-<!-- Hero Section con video de fondo -->
-<section class="relative h-screen">
-  <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
-    <source src="video/Anuncio Adidas - Here to Create - Publicidad Comercial Spot 2017 - Mindundis (720p, h264) (1).mp4" type="video/mp4">
-    Tu navegador no soporta el formato de video.
-  </video>
-  <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white">
-    <h2 class="text-4xl md:text-6xl font-bold mb-4">Bienvenido a Promesa Sport</h2>
-    <p class="text-lg md:text-xl mb-8">Descubre nuestra selección de ropa y perfumes árabes.</p>
-    <div class="flex gap-4">
-      <a href="#ropa" class="btn">Ropa</a>
-      <a href="#perfumes" class="btn">Perfumes Árabes</a>
-      <a href="https://www.instagram.com/promesasport_" target="_blank" class="btn btn-instagram">Instagram</a>
+  <section class="relative h-screen">
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover" poster="imagen-de-respaldo.jpg">
+      <source src="video/Anuncio Adidas - Here to Create - Publicidad Comercial Spot 2017 - Mindundis (720p, h264) (1).mp4" type="video/mp4" loading="lazy">
+      Tu navegador no soporta el formato de video.
+    </video>
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white">
+      <h2 class="text-4xl md:text-6xl font-bold mb-4">Bienvenido a Promesa Sport</h2>
+      <p class="text-lg md:text-xl mb-8">Descubre nuestra selección de ropa y perfumes árabes.</p>
+      <div class="flex gap-4">
+        <a href="#ropa" class="btn">Ropa</a>
+        <a href="#perfumes" class="btn">Perfumes Árabes</a>
+        <a href="https://www.instagram.com/promesasport_" target="_blank" class="btn btn-instagram">Instagram</a>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Sección Ropa -->
   <section id="ropa" class="py-16" data-aos="fade-up">
@@ -170,12 +212,12 @@
         <div class="p-4 rounded-lg text-center card shadow-md">
           <div class="carousel">
             <div class="carousel-images" id="carousel-images-product-1">
-              <img src="https://via.placeholder.com/300x300/ff5733" alt="Producto 1" class="active" />
-              <img src="https://via.placeholder.com/300x300/33ff57" alt="Producto 1" />
-              <img src="https://via.placeholder.com/300x300/ff5733" alt="Producto 1" />
+              <img src="https://via.placeholder.com/300x300/ff5733" alt="Producto 1" class="active" loading="lazy"/>
+              <img src="https://via.placeholder.com/300x300/33ff57" alt="Producto 1" loading="lazy" />
+              <img src="https://via.placeholder.com/300x300/ff5733" alt="Producto 1" loading="lazy" />
             </div>
-            <div class="carousel-button carousel-button-prev" onclick="moveCarousel('product-1', -1)">❐</div>
-            <div class="carousel-button carousel-button-next" onclick="moveCarousel('product-1', 1)">❒</div>
+            <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-product-1', -1)">❮</button>
+            <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-product-1', 1)">❯</button>
           </div>
           <h4 class="text-xl font-bold mt-4">Producto 1</h4>
           <p>Descripción breve del producto.</p>
@@ -185,56 +227,65 @@
   </section>
 
   <!-- Sección Perfumes -->
-<section id="perfumes" class="py-16 bg-primary" data-aos="fade-up">
-  <div class="container mx-auto px-4 text-white">
-    <h3 class="text-3xl font-bold text-center mb-8">Perfumes Árabes</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Tarjeta con Carrusel 1 -->
-      <div class="p-4 rounded-lg text-center card shadow-md">
-        <div class="carousel">
-          <div class="carousel-images" id="carousel-images-perfume-1">
-            <img src="Imagenes-perfumes/1.png" alt="Perfume 1" class="active" />
-            <img src="Imagenes-perfumes/2.png" alt="Perfume 1" />
-            <img src="Imagenes-perfumes/3.png" alt="Perfume 1" />
+  <section id="perfumes" class="py-16 bg-primary" data-aos="fade-up">
+    <div class="container mx-auto px-4 text-white">
+      <h3 class="text-3xl font-bold text-center mb-8">Perfumes Árabes</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Tarjeta con Carrusel 1 -->
+        <div class="p-4 rounded-lg text-center card shadow-md">
+          <div class="carousel">
+            <div class="carousel-images" id="carousel-images-perfume-1">
+              <img src="Imagenes-perfumes/1.png" alt="Perfume 1" class="active" loading="lazy" />
+              <img src="Imagenes-perfumes/2.png" alt="Perfume 1"  loading="lazy"/>
+              <img src="Imagenes-perfumes/3.png" alt="Perfume 1" loading="lazy" />
+            </div>
+            <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-1', -1)">❮</button>
+            <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-perfume-1', 1)">❯</button>
           </div>
-          <div class="carousel-button carousel-button-prev" onclick="moveCarousel('carousel-images-perfume-1', -1)">❮</div>
-          <div class="carousel-button carousel-button-next" onclick="moveCarousel('carousel-images-perfume-1', 1)">❯</div>
+          <h4 class="text-xl font-bold mt-4">Perfume 1</h4>
+          <p>Una fragancia cautivadora.</p>
         </div>
-        <h4 class="text-xl font-bold mt-4">Perfume 1</h4>
-        <p>Una fragancia cautivadora.</p>
-      </div>
-      <!-- Tarjeta con Carrusel 2 -->
-      <div class="p-4 rounded-lg text-center card shadow-md">
-        <div class="carousel">
-          <div class="carousel-images" id="carousel-images-perfume-2">
-            <img src="Imagenes-perfumes/4.png" alt="Perfume 2" class="active" />
-            <img src="Imagenes-perfumes/5.png" alt="Perfume 2" />
-            <img src="Imagenes-perfumes/6.png" alt="Perfume 2" />
+        <!-- Tarjeta con Carrusel 2 -->
+        <div class="p-4 rounded-lg text-center card shadow-md">
+          <div class="carousel">
+            <div class="carousel-images" id="carousel-images-perfume-2">
+              <img src="Imagenes-perfumes/4.png" alt="Perfume 2" class="active"  loading="lazy"/>
+              <img src="Imagenes-perfumes/5.png" alt="Perfume 2"  loading="lazy"/>
+              <img src="Imagenes-perfumes/6.png" alt="Perfume 2"  loading="lazy"/>
+            </div>
+            <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-2', -1)">❮</button>
+            <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-perfume-2', 1)">❯</button>
           </div>
-          <div class="carousel-button carousel-button-prev" onclick="moveCarousel('carousel-images-perfume-2', -1)">❮</div>
-          <div class="carousel-button carousel-button-next" onclick="moveCarousel('carousel-images-perfume-2', 1)">❯</div>
+          <h4 class="text-xl font-bold mt-4">Perfume 2</h4>
+          <p>Una fragancia exclusiva.</p>
         </div>
-        <h4 class="text-xl font-bold mt-4">Perfume 2</h4>
-        <p>Una fragancia exclusiva.</p>
-      </div>
-      <!-- Tarjeta con Carrusel 3 -->
-      <div class="p-4 rounded-lg text-center card shadow-md">
-        <div class="carousel">
-          <div class="carousel-images" id="carousel-images-perfume-3">
-            <img src="Imagenes-perfumes/7.png" alt="Perfume 2" class="active" />
-            <img src="Imagenes-perfumes/8.png" alt="Perfume 2" />
-            <img src="Imagenes-perfumes/9.png" alt="Perfume 2" />
+        <!-- Tarjeta con Carrusel 3 -->
+        <div class="p-4 rounded-lg text-center card shadow-md">
+          <div class="carousel">
+            <div class="carousel-images" id="carousel-images-perfume-3">
+              <img src="Imagenes-perfumes/7.png" alt="Perfume 2" class="active" loading="lazy" />
+              <img src="Imagenes-perfumes/8.png" alt="Perfume 2" loading="lazy" />
+              <img src="Imagenes-perfumes/9.png" alt="Perfume 2" loading="lazy" />
+            </div>
+            <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-3', -1)">❮</button>
+            <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-perfume-3', 1)">❯</button>
           </div>
-          <div class="carousel-button carousel-button-prev" onclick="moveCarousel('carousel-images-perfume-3', -1)">❮</div>
-          <div class="carousel-button carousel-button-next" onclick="moveCarousel('carousel-images-perfume-3', 1)">❯</div>
+          <h4 class="text-xl font-bold mt-4">Perfume 2</h4>
+          <p>Una fragancia exclusiva.</p>
         </div>
-        <h4 class="text-xl font-bold mt-4">Perfume 2</h4>
-        <p>Una fragancia exclusiva.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Botón para subir al inicio -->
+  <button id="scrollToTop" class="fixed bottom-4 right-4 bg-primary text-white p-3 rounded-full shadow-lg hidden" aria-label="Subir al inicio">
+    ↑
+  </button>
+
+  <!-- Botón para cambiar el tema -->
+  <button id="themeToggle" class="fixed bottom-20 right-4 bg-primary text-white p-3 rounded-full shadow-lg">
+    🌙
+  </button>
 
   <!-- Footer -->
   <footer class="py-4">
@@ -245,23 +296,46 @@
 
   <script>
     // Función para mover el carrusel
-// Función para mover el carrusel
-function moveCarousel(carouselId, direction) {
-  const carousel = document.getElementById(carouselId);
-  const images = carousel.children;
-  const totalImages = images.length;
-  let currentIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
+    function moveCarousel(carouselId, direction) {
+      const carousel = document.getElementById(carouselId);
+      const images = carousel.children;
+      const totalImages = images.length;
+      let currentIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
 
-  // Ocultar la imagen actual
-  images[currentIndex].classList.remove('active');
+      // Ocultar la imagen actual
+      images[currentIndex].classList.remove('active');
 
-  // Calcular el nuevo índice
-  let newIndex = (currentIndex + direction + totalImages) % totalImages;
+      // Calcular el nuevo índice
+      let newIndex = (currentIndex + direction + totalImages) % totalImages;
 
-  // Mostrar la nueva imagen
-  images[newIndex].classList.add('active');
-}
+      // Mostrar la nueva imagen
+      images[newIndex].classList.add('active');
+    }
 
+    // Botón para subir al inicio
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    window.onscroll = () => {
+      if (window.scrollY > 200) {
+        scrollToTopBtn.style.display = 'block';
+      } else {
+        scrollToTopBtn.style.display = 'none';
+      }
+    };
+    scrollToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Botón para cambiar el tema
+    const themeToggle = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+
+    document.body.classList.add(currentTheme);
+    themeToggle.textContent = currentTheme === 'dark' ? '🌙' : '☀️';
+
+    themeToggle.onclick = () => {
+      const isDark = document.body.classList.toggle('dark');
+      document.body.classList.toggle('light', !isDark);
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeToggle.textContent = isDark ? '🌙' : '☀️';
+    };
 
     // Inicializar animaciones AOS
     AOS.init();
