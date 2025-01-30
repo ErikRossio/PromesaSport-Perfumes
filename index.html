@@ -187,21 +187,22 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative h-screen">
-    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover" poster="imagen-de-respaldo.jpg">
-      <source src="video/Anuncio Adidas - Here to Create - Publicidad Comercial Spot 2017 - Mindundis (720p, h264) (1).mp4" type="video/mp4" loading="lazy">
-      Tu navegador no soporta el formato de video.
-    </video>
-    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white">
-      <h2 class="text-4xl md:text-6xl font-bold mb-4">Bienvenido a Promesa Sport</h2>
-      <p class="text-lg md:text-xl mb-8">Descubre nuestra selección de ropa y perfumes árabes.</p>
-      <div class="flex gap-4">
-        <a href="#ropa" class="btn">Ropa</a>
-        <a href="#perfumes" class="btn">Perfumes Árabes</a>
-        <a href="https://www.instagram.com/promesasport_" target="_blank" class="btn btn-instagram">Instagram</a>
-      </div>
+<!-- Hero Section -->
+<section class="relative h-screen">
+  <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover" poster="imagen-de-respaldo.jpg">
+    <source src="video/Anuncio Adidas - Here to Create - Publicidad Comercial Spot 2017 - Mindundis (720p, h264) (1).mp4" type="video/mp4" loading="lazy">
+    Tu navegador no soporta el formato de video.
+  </video>
+  <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white px-4">
+    <h2 class="text-3xl md:text-6xl font-bold mb-4 text-center">Bienvenido a Promesa Sport</h2>
+    <p class="text-base md:text-xl mb-8 text-center">Descubre nuestra selección de ropa y perfumes árabes.</p>
+    <div class="flex flex-col md:flex-row gap-4">
+      <a href="#ropa" class="btn">Ropa</a>
+      <a href="#perfumes" class="btn">Perfumes Árabes</a>
+      <a href="https://www.instagram.com/promesasport_" target="_blank" class="btn btn-instagram">Instagram</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Sección Ropa -->
   <section id="ropa" class="py-16" data-aos="fade-up">
@@ -249,8 +250,8 @@
         <div class="p-4 rounded-lg text-center card shadow-md">
           <div class="carousel">
             <div class="carousel-images" id="carousel-images-perfume-2">
-              <img src="Imagenes-perfumes/4.png" alt="Perfume 2" class="active"  loading="lazy"/>
-              <img src="Imagenes-perfumes/5.png" alt="Perfume 2"  loading="lazy"/>
+              <img src="Imagenes-perfumes/5.png" alt="Perfume 2" class="active"  loading="lazy"/>
+              <img src="Imagenes-perfumes/4.png" alt="Perfume 2"  loading="lazy"/>
               <img src="Imagenes-perfumes/6.png" alt="Perfume 2"  loading="lazy"/>
             </div>
             <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-2', -1)">❮</button>
@@ -273,6 +274,90 @@
           <h4 class="text-xl font-bold mt-4">Perfume 2</h4>
           <p>Una fragancia exclusiva.</p>
         </div>
+                    <!-- Tarjeta con Carrusel 4 -->
+                    <div class="p-4 rounded-lg text-center card shadow-md">
+                      <div class="carousel">
+                        <div class="carousel-images" id="carousel-images-perfume-4">
+                          <img src="Imagenes-perfumes/10.png" alt="Perfume 4" class="active"  loading="lazy"/>
+                          <img src="Imagenes-perfumes/11.png" alt="Perfume 4"  loading="lazy"/>
+                          <img src="Imagenes-perfumes/12.png" alt="Perfume 4"  loading="lazy"/>
+                        </div>
+                        <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-4', -1)">❮</button>
+                        <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-perfume-4', 1)">❯</button>
+                      </div>
+                      <h4 class="text-xl font-bold mt-4">Perfume 4</h4>
+                      <p>Una fragancia exclusiva.</p>
+                    </div>
+                                <!-- Tarjeta con Carrusel 5 -->
+            <div class="p-4 rounded-lg text-center card shadow-md">
+              <div class="carousel">
+                <div class="carousel-images" id="carousel-images-perfume-5">
+                  <img src="Imagenes-perfumes/13.png" alt="Perfume 5" class="active"  loading="lazy"/>
+                  <img src="Imagenes-perfumes/14.png" alt="Perfume 5"  loading="lazy"/>
+                  <img src="Imagenes-perfumes/15.png" alt="Perfume 5"  loading="lazy"/>
+                </div>
+                <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-5', -1)">❮</button>
+                <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-perfume-5', 1)">❯</button>
+              </div>
+              <h4 class="text-xl font-bold mt-4">Perfume 5</h4>
+              <p>Una fragancia exclusiva.</p>
+            </div>
+                        <!-- Tarjeta con Carrusel 6 -->
+                        <div class="p-4 rounded-lg text-center card shadow-md">
+                          <div class="carousel">
+                            <div class="carousel-images" id="carousel-images-perfume-6">
+                              <img src="Imagenes-perfumes/16.png" alt="Perfume 6" class="active"  loading="lazy"/>
+                              <img src="Imagenes-perfumes/17.png" alt="Perfume 6"  loading="lazy"/>
+                              <img src="Imagenes-perfumes/18.png" alt="Perfume 6"  loading="lazy"/>
+                            </div>
+                            <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-6', -1)">❮</button>
+                            <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-perfume-6', 1)">❯</button>
+                          </div>
+                          <h4 class="text-xl font-bold mt-4">Perfume 6</h4>
+                          <p>Una fragancia exclusiva.</p>
+                        </div>
+                                    <!-- Tarjeta con Carrusel 7 -->
+            <div class="p-4 rounded-lg text-center card shadow-md">
+              <div class="carousel">
+                <div class="carousel-images" id="carousel-images-perfume-7">
+                  <img src="Imagenes-perfumes/20.png" alt="Perfume 7" class="active"  loading="lazy"/>
+                  <img src="Imagenes-perfumes/19.png" alt="Perfume 7"  loading="lazy"/>
+                  <img src="Imagenes-perfumes/21.png" alt="Perfume 7"  loading="lazy"/>
+                </div>
+                <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-7', -1)">❮</button>
+                <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-perfume-7', 1)">❯</button>
+              </div>
+              <h4 class="text-xl font-bold mt-4">Perfume 7</h4>
+              <p>Una fragancia exclusiva.</p>
+            </div>
+                        <!-- Tarjeta con Carrusel 8 -->
+                        <div class="p-4 rounded-lg text-center card shadow-md">
+                          <div class="carousel">
+                            <div class="carousel-images" id="carousel-images-perfume-8">
+                              <img src="Imagenes-perfumes/22.png" alt="Perfume 8" class="active"  loading="lazy"/>
+                              <img src="Imagenes-perfumes/23.png" alt="Perfume 8"  loading="lazy"/>
+                              <img src="Imagenes-perfumes/24.png" alt="Perfume 8"  loading="lazy"/>
+                            </div>
+                            <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-8', -1)">❮</button>
+                            <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-perfume-8', 1)">❯</button>
+                          </div>
+                          <h4 class="text-xl font-bold mt-4">Perfume 8</h4>
+                          <p>Una fragancia exclusiva.</p>
+                        </div>
+                                    <!-- Tarjeta con Carrusel 9 -->
+            <div class="p-4 rounded-lg text-center card shadow-md">
+              <div class="carousel">
+                <div class="carousel-images" id="carousel-images-perfume-9">
+                  <img src="Imagenes-perfumes/25.png" alt="Perfume 9" class="active"  loading="lazy"/>
+                  <img src="Imagenes-perfumes/26.png" alt="Perfume 9"  loading="lazy"/>
+                  <img src="Imagenes-perfumes/27.png" alt="Perfume 9"  loading="lazy"/>
+                </div>
+                <button class="carousel-button carousel-button-prev" aria-label="Anterior" onclick="moveCarousel('carousel-images-perfume-9', -1)">❮</button>
+                <button class="carousel-button carousel-button-next" aria-label="Siguiente" onclick="moveCarousel('carousel-images-perfume-9', 1)">❯</button>
+              </div>
+              <h4 class="text-xl font-bold mt-4">Perfume 9</h4>
+              <p>Una fragancia exclusiva.</p>
+            </div>
       </div>
     </div>
   </section>
@@ -295,50 +380,40 @@
   </footer>
 
   <script>
-    // Función para mover el carrusel
-    function moveCarousel(carouselId, direction) {
-      const carousel = document.getElementById(carouselId);
-      const images = carousel.children;
-      const totalImages = images.length;
-      let currentIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
+    // Mover el carrusel
+function moveCarousel(carouselId, direction) {
+  const carousel = document.getElementById(carouselId);
+  const images = carousel.children;
+  const totalImages = images.length;
+  let currentIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
 
-      // Ocultar la imagen actual
-      images[currentIndex].classList.remove('active');
+  images[currentIndex].classList.remove('active');
+  let newIndex = (currentIndex + direction + totalImages) % totalImages;
+  images[newIndex].classList.add('active');
+}
 
-      // Calcular el nuevo índice
-      let newIndex = (currentIndex + direction + totalImages) % totalImages;
+// Scroll al inicio
+const scrollToTopBtn = document.getElementById('scrollToTop');
+window.onscroll = () => {
+  scrollToTopBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+};
+scrollToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Mostrar la nueva imagen
-      images[newIndex].classList.add('active');
-    }
+// Cambiar tema
+const themeToggle = document.getElementById('themeToggle');
+const currentTheme = localStorage.getItem('theme') || 'dark';
+document.body.classList.add(currentTheme);
+themeToggle.textContent = currentTheme === 'dark' ? '🌙' : '☀️';
 
-    // Botón para subir al inicio
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    window.onscroll = () => {
-      if (window.scrollY > 200) {
-        scrollToTopBtn.style.display = 'block';
-      } else {
-        scrollToTopBtn.style.display = 'none';
-      }
-    };
-    scrollToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+themeToggle.onclick = () => {
+  const isDark = document.body.classList.toggle('dark');
+  document.body.classList.toggle('light', !isDark);
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  themeToggle.textContent = isDark ? '🌙' : '☀️';
+};
 
-    // Botón para cambiar el tema
-    const themeToggle = document.getElementById('themeToggle');
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-
-    document.body.classList.add(currentTheme);
-    themeToggle.textContent = currentTheme === 'dark' ? '🌙' : '☀️';
-
-    themeToggle.onclick = () => {
-      const isDark = document.body.classList.toggle('dark');
-      document.body.classList.toggle('light', !isDark);
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      themeToggle.textContent = isDark ? '🌙' : '☀️';
-    };
-
-    // Inicializar animaciones AOS
-    AOS.init();
+// Inicializar AOS
+AOS.init();
   </script>
 </body>
 </html>
