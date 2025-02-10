@@ -17,110 +17,153 @@
   <meta property="og:description" content="Promesa Sport - Ropa y perfumes árabes de calidad.">
   <meta property="og:image" content="https://tudominio.com/imagen-compartir.jpg">
   <meta property="og:url" content="https://tudominio.com">
+  <!-- Precargar recursos críticos -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style">
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
 
   <style>
     :root {
-      /* Colores principales */
-      --bg-dark: #1f1f1f; /* Fondo oscuro */
-      --primary: #8a2be2; /* Violeta */
-      --secondary-dark: #2c2c2c; /* Gris oscuro */
-      --text-dark: #f0f0f0; /* Texto claro en fondo oscuro */
-      --accent-dark: #8a2be2; /* Violeta brillante */
-      --bg-light: #f9f9f9; 
-      --text-light: #1f1f1f; 
+      /* Colores principales modernos */
+      --bg-dark: #121212;
+      --primary: #9c4dcc;
+      --secondary-dark: #1e1e1e;
+      --text-dark: #ffffff;
+      --accent-dark: #b366ff;
+      --bg-light: #fafafa;
+      --text-light: #121212;
+      --shadow-color: rgba(0, 0, 0, 0.2);
     }
 
     body.dark {
       background-color: var(--bg-dark);
       color: var(--text-dark);
+      background-image: linear-gradient(to bottom right, #121212, #1a1a1a);
     }
 
     body.light {
       background-color: var(--bg-light);
       color: var(--text-light);
+      background-image: linear-gradient(to bottom right, #fafafa, #f0f0f0);
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-      transition: background-color 0.3s, color 0.3s;
+      transition: all 0.4s ease;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header, footer {
-      background-color: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+      box-shadow: 0 2px 10px var(--shadow-color);
     }
 
     .card {
-      background-color: rgba(44, 44, 44, 0.8); /* Gris oscuro con opacidad */
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s, box-shadow 0.3s;
-      padding: 20px;
-      border-radius: 10px;
+      background: rgba(30, 30, 30, 0.95);
+      backdrop-filter: blur(15px);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 20px;
+      will-change: transform;
     }
 
     .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
 
     .scroll-progress {
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--accent-dark));
+      z-index: 1000;
+      transition: width 0.3s ease;
       position: fixed;
       top: 0;
       left: 0;
-      width: 0;
-      height: 4px;
-      background-color: var(--accent-dark);
-      z-index: 1000;
-      transition: width 0.2s ease-in-out;
+      width: 0%;
     }
 
-    /* Estilo de botones */
+    /* Botones mejorados */
     .btn {
-      padding: 12px 24px;
-      border-radius: 8px;
-      background-color: var(--primary);
+      padding: 16px 36px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-dark));
       color: white;
       font-weight: 600;
-      text-align: center;
-      text-transform: uppercase;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    }
-
-    .btn:hover {
-      background-color: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-instagram {
-      background-color: #f56040; /* Color de Instagram */
-    }
-
-    .btn-instagram:hover {
-      background-color: #d64b2a;
-    }
-
-    .carousel {
+      letter-spacing: 0.5px;
+      border: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 1.2rem;
       position: relative;
-      width: 100%;
       overflow: hidden;
     }
 
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::after {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(156, 77, 204, 0.3);
+    }
+
+    .btn-instagram {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    .btn-instagram:hover {
+      background: linear-gradient(45deg, #bc1888, #cc2366, #dc2743, #e6683c, #f09433);
+    }
+
+    /* Carrusel mejorado */
+    .carousel {
+      position: relative;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      max-width: 400px;
+      margin: 0 auto;
+      height: 400px;
+    }
+
     .carousel-images {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
+      position: relative;
+      width: 100%;
+      height: 100%;
     }
 
     .carousel-images img {
+      position: absolute;
+      top: 0;
+      left: 0;
       display: none;
       opacity: 0;
-      width: 100%; /* Ajuste para móviles */
-      max-width: 300px; /* Tamaño máximo para escritorio */
-      height: auto; /* Mantén la proporción de la imagen */
-      margin: 0 auto; /* Centrar la imagen dentro del contenedor */
-      transition: opacity 0.3s ease-in-out;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: opacity 0.8s ease;
+      min-height: 400px;
+      max-height: 400px;
+      filter: brightness(1.1) contrast(1.1);
+      will-change: opacity;
     }
 
     .carousel-images img.active {
@@ -132,39 +175,72 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.7);
       color: white;
-      font-size: 1.5rem; /* Tamaño más pequeño para móviles */
-      padding: 8px;
+      font-size: 1.6rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
       cursor: pointer;
-      border: none;
-      outline: none;
+      transition: all 0.4s ease;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .carousel-button:hover {
+      background: rgba(0, 0, 0, 0.9);
+      transform: translateY(-50%) scale(1.15);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     .carousel-button-prev {
-      left: 0;
+      left: 20px;
     }
 
     .carousel-button-next {
-      right: 0;
+      right: 20px;
+    }
+
+    /* Animaciones de carga perezosa */
+    .lazy-load {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .lazy-load.loaded {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     @media (max-width: 768px) {
+      .carousel {
+        max-width: 95vw;
+        height: 400px;
+      }
+
       .carousel-images img {
-        max-width: 200px; /* Tamaño más pequeño para móviles */
+        min-height: 400px;
       }
 
       .carousel-button {
-        font-size: 1.2rem; /* Botones más pequeños en móviles */
-        padding: 6px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
       }
 
       h2 {
-        font-size: 2rem; /* Tamaño de fuente más pequeño para móviles */
+        font-size: 2.2rem;
+        line-height: 1.3;
       }
 
       p {
-        font-size: 1rem; /* Tamaño de fuente más pequeño para móviles */
+        font-size: 1.2rem;
+        line-height: 1.6;
       }
     }
   </style>
@@ -380,40 +456,86 @@
   </footer>
 
   <script>
-    // Mover el carrusel
-function moveCarousel(carouselId, direction) {
-  const carousel = document.getElementById(carouselId);
-  const images = carousel.children;
-  const totalImages = images.length;
-  let currentIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
+    // Función para manejar el carrusel con animaciones suaves
+    function moveCarousel(carouselId, direction) {
+      const carousel = document.getElementById(carouselId);
+      const images = Array.from(carousel.children);
+      const totalImages = images.length;
+      const currentIndex = images.findIndex(image => image.classList.contains('active'));
+      
+      // Aplicar fade out a imagen actual
+      images[currentIndex].style.opacity = '0';
+      setTimeout(() => {
+        images[currentIndex].classList.remove('active');
+        
+        // Calcular nuevo índice con validación
+        const newIndex = (currentIndex + direction + totalImages) % totalImages;
+        
+        // Mostrar nueva imagen con fade in
+        images[newIndex].classList.add('active');
+        images[newIndex].style.opacity = '1';
+      }, 300);
+    }
 
-  images[currentIndex].classList.remove('active');
-  let newIndex = (currentIndex + direction + totalImages) % totalImages;
-  images[newIndex].classList.add('active');
-}
+    // Control de scroll con throttling para mejor rendimiento
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    let isScrolling = false;
 
-// Scroll al inicio
-const scrollToTopBtn = document.getElementById('scrollToTop');
-window.onscroll = () => {
-  scrollToTopBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
-};
-scrollToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.addEventListener('scroll', () => {
+      if (!isScrolling) {
+        isScrolling = true;
+        setTimeout(() => {
+          scrollToTopBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+          isScrolling = false;
+        }, 100);
+      }
+    });
 
-// Cambiar tema
-const themeToggle = document.getElementById('themeToggle');
-const currentTheme = localStorage.getItem('theme') || 'dark';
-document.body.classList.add(currentTheme);
-themeToggle.textContent = currentTheme === 'dark' ? '🌙' : '☀️';
+    // Implementar lazy loading para imágenes
+    const lazyLoadObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('loaded');
+          lazyLoadObserver.unobserve(entry.target);
+        }
+      });
+    });
 
-themeToggle.onclick = () => {
-  const isDark = document.body.classList.toggle('dark');
-  document.body.classList.toggle('light', !isDark);
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  themeToggle.textContent = isDark ? '🌙' : '☀️';
-};
+    // Sistema de temas mejorado
+    const themeToggle = document.getElementById('themeToggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    function setTheme(theme) {
+      document.body.classList.remove('dark', 'light');
+      document.body.classList.add(theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
 
-// Inicializar AOS
-AOS.init();
+    // Inicializar tema
+    const savedTheme = localStorage.getItem('theme');
+    const initialTheme = savedTheme || (prefersDarkScheme.matches ? 'dark' : 'light');
+    setTheme(initialTheme);
+
+    // Escuchar cambios de tema
+    themeToggle.addEventListener('click', () => {
+      const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+
+    // Escuchar cambios en preferencias del sistema
+    prefersDarkScheme.addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+
+    // Inicializar animaciones AOS con configuración optimizada
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
   </script>
 </body>
 </html>
